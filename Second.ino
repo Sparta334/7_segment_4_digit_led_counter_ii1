@@ -28,7 +28,6 @@ const unsigned long End_Time = 3600;
 byte d[4] = {0 , 0 , 0 , 0};
 unsigned long start_time, count;
 bool CounterClock = true ;
-byte time ;
 
 void setup()
 {
@@ -43,7 +42,6 @@ void setup()
   
   start_time = millis()/500;
   
-  time = 0;
   
 }
 
@@ -55,7 +53,11 @@ void loop()
 
     if(digitalRead(btnPin) == HIGH)
     {
-      CounterClock = !CounterClock
+      CounterClock = true;
+    }
+    else
+    {
+      CounterClock = false;
     }
   
       
